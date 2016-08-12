@@ -35,6 +35,7 @@ body{
 	width: 70%;
 	display: table;
 	float: right;
+	position: relative;
 }
 
 .navItem{
@@ -42,19 +43,53 @@ body{
 	width: 20%;
 	display: table-cell;
 	vertical-align: middle;
+	text-align: center;
+}
+
+.dropdown:hover{
+	background-color: lightblue;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+.dropdown-content{
+	min-width: 20%;
+	text-align: left;
+	position: absolute;
+	background-color: lightgreen;
+	display: none;
+  	top: 100px;
+}
+
+.dropdown-content a{
+	display: block;
+}
+
+.dropdown-content a:hover{
+	background-color: chocolate;
 }
 
 #slideShow{
 	width: 75%;
-	height: 300px;
+	height: 60vh;
 	background-color: lightblue;
 	display: inline-block;
+	vertical-align: middle;
+}
+
+.image{
+/*	width: 100%;*/
+	max-height: 60vh;
+	object-fit:cover;
 }
 
 #worshipInfo{
 	width: 25%;
-	height: 300px;
+	height: 60vh;
 	background-color: pink;
 	display: inline-block;
+	vertical-align: middle;
 }
 
