@@ -67,40 +67,86 @@ a {
   max-height: 60vh;
   object-fit: cover;
   display: none; }
+.banner #slideShow img .show {
+  display: block;
+  opacity: 1; }
 .banner #worshipInfo {
   width: 25%;
+  padding-top: 2%;
   height: 60vh;
   background-color: #071D38;
   color: #E7EFF7;
   display: inline-block;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
   vertical-align: middle; }
 
 .worship-panel {
   margin: 2.5%;
   background-color: #071D38;
-  color: #E7EFF7; }
+  color: #E7EFF7;
+  vertical-align: middle; }
   .worship-panel .panel-title {
     font-size: 20px;
     text-align: center;
     padding-bottom: 8px;
-    border-bottom: 2px solid #E7EFF7;
+    border-bottom: 0.5px solid #D8DADB;
     color: #E7EFF7; }
   .worship-panel .panel-content {
     margin: 7px;
-    font-size: 14px; }
+    font-size: 14px;
+    text-align: left; }
 
 .desc-panel {
   margin: 2.5%;
   background-color: #E7EFF7;
-  color: #95989A; }
+  color: #818283;
+  display: inline-block;
+  vertical-align: top;
+  width: 28%; }
   .desc-panel .panel-title {
     font-size: 20px;
     text-align: center;
     padding-bottom: 8px;
-    border-bottom: 2px solid #95989A;
+    border-bottom: 0.5px solid #D8DADB;
     color: #071D38; }
   .desc-panel .panel-content {
     margin: 7px;
-    font-size: 14px; }
+    font-size: 14px;
+    text-align: left; }
+
+.big-panel {
+  margin: 2.5%;
+  background-color: #E7EFF7;
+  color: #818283; }
+  .big-panel .panel-title {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #D8DADB;
+    color: #071D38; }
+  .big-panel .panel-content {
+    margin: 7px;
+    font-size: 14px;
+    text-align: left; }
+  .big-panel .panel-title {
+    text-align: left;
+    font-weight: bold; }
+
+.content {
+  padding: 5%;
+  padding-top: 3%;
+  background-color: #E7EFF7;
+  text-align: center; }
+  .content .latest-events img {
+    width: 45%;
+    margin: 2.5%; }
+
+.footer {
+  background-color: #5889AA;
+  color: #E7EFF7;
+  padding: 5%;
+  font-size: 12px; }
 
 /*# sourceMappingURL=index.css.map */

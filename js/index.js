@@ -74,19 +74,21 @@ var SlideShow = React.createClass({
 		return {imgIdx:0};
 	},
     componentDidMount: function(){
-        //this.setInterval(this.change, 2000);    
+        this.setInterval(this.change, 2000);    
     },
 	change: function(){//carousel
        // console.log("change");
         var images = $("#slideShow img");
         var that = this;
         $("#slideShow img").each(function(index){
-            if(index != that.state.imgIdx % 3){
-                $(this).show(1000);
+            if(index == that.state.imgIdx % 3){
+                //$(this).fadeIn(1000);
+                //$(this).addClass("show");
             } else {
-                $(this).hide(1000);
+                //$(this).fadeOut(1000);
+                //$(this).removeClass("show");
             }
-            //console.log(that.state.imgIdx, index, this);
+            console.log(that.state.imgIdx, index, this);
         });
         this.setState({imgIdx: this.state.imgIdx + 1});
 	},
@@ -107,27 +109,11 @@ var WorshipInfo = React.createClass({
 	render: function(){
 		return(
 			<div id="worshipInfo">
-				<div className="worship-panel">
-                    <div className="panel-title">聚會時間</div>
-                    <div className="panel-content">
-                        聯合主日崇拜: 10:00AM<br/>
-                        成人主日學: 11:45AM<br/>
-                        兒童及青少年主日學: 10:30AM<br/>
-                        週二禱告會: 7:30PM<br/>
-                        週五3G小組聚會: 7:30PM<br/>
-                    </div>
-                </div>
-                <div className="worship-panel">
-                    <div className="panel-title">教會資訊</div>
-                    <div className="panel-content">
-                        教會地址: 380 Montague Expressway<br/>
-                        Milpitas, CA 95035<br/>
-                        電話:       (408) 526-1312 <br/>
-                        傳真:       (408) 946-4749 <br/>
-                        電郵: info@arkbaptistchurch.org<br/>
-                        會牧: 孫慈俠牧師<br/>
-                    </div>
-                </div>
+                聯合主日崇拜<br/> 10:00AM<br/>
+                成人主日學<br/> 11:45AM<br/>
+                兒童及青少年主日學<br/> 10:30AM<br/>
+                週二禱告會<br/> 7:30PM<br/>
+                週五3G小組聚會<br/> 7:30PM<br/>
 			</div>
 
 		)
@@ -146,12 +132,96 @@ var Banner = React.createClass({
 	}
 });
 
+var DescSection = React.createClass({
+	render: function(){
+		return(
+			<div className="desc-section">
+				<div className="desc-panel">
+                    <div className="panel-title">異象/Vision</div>
+                    <div className="panel-content">
+                        塑造當代基督門徒 <br/>
+                        Making Christ’s disciples 
+                        of the day
+                    </div>
+                </div>
+                <div className="desc-panel">
+                    <div className="panel-title">使命/Mission</div>
+                    <div className="panel-content">
+                        在基督裡成長 <br/>
+                        Growing in Christ<br/>
+                        在萬民中傳揚 <br/>
+                        Preaching among nations
+                    </div>
+                </div>
+                <div className="desc-panel">
+                    <div className="panel-title">行動/Action</div>
+                    <div className="panel-content">
+                        塑造門徒 Making disciples<br/>
+                        修造家庭 Restoring families<br/>
+                        建造團隊 Building teams<br/>
+                        造福萬民 Transforming  nations
+                    </div>
+                </div>
+			</div>
+
+		)
+	}
+});
+
+var LatestEvents = React.createClass({
+	render: function(){
+		return(
+			<div className="latest-events">
+				<div className="big-panel">
+                    <div className="panel-title">最新消息</div>
+                    <div className="panel-content">
+                        <img src="img/One_Psalm_a_Month_web_banner.jpg" alt="One Psalm a Month" />
+                        <img src="img/Book_Study_Retreat_web_banner_2016.jpg" alt="Book Study Retreat" />
+                    </div>
+                </div>
+			</div>
+
+		)
+	}
+});
+
+
+var Content = React.createClass({
+	render: function(){
+		return(
+			<div className="content">
+				<DescSection />
+				<LatestEvents />
+			</div>
+
+		)
+	}
+});
+
+var Footer = React.createClass({
+	render: function(){
+		return(
+			<div className="footer">
+				教會地址: 380 Montague Expressway<br/>
+                Milpitas, CA 95035<br/>
+                電話:       (408) 526-1312 <br/>
+                傳真:       (408) 946-4749<br/>
+                電郵: info@arkbaptistchurch.org<br/>
+                會牧: 孫慈俠牧師
+			</div>
+
+		)
+	}
+});
+
 var Main = React.createClass({
 	render: function(){
 		return(
 			<div>
 				<Top />
 				<Banner />
+                <Content />
+                <Footer />
 			</div>
 
 		)

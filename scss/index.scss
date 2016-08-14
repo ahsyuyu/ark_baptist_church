@@ -1,6 +1,6 @@
 $primary-color-dark: #071D38;
 $primary-color-light: #E7EFF7;
-$second-color-light: #95989A;
+$second-color-light: #818283;
 $second-color: #5889AA;
 
 @mixin transition($sec){
@@ -103,13 +103,22 @@ a{
         object-fit:cover;
         display: none;
     }
+    
+    #slideShow img .show{
+        display: block;
+        opacity: 1;
+    }
 
     #worshipInfo{
         width: 25%;
+        padding-top: 2%;
         height: 60vh;
         background-color: $primary-color-dark;
         color: $primary-color-light;
         display: inline-block;
+        text-align: center;
+        line-height: 24px;
+        font-size: 18px;
         vertical-align: middle;
     }
 
@@ -123,19 +132,52 @@ a{
         font-size: $big-font-size;
         text-align: center;
         padding-bottom: 8px;
-        border-bottom: 2px solid $color;
+        border-bottom: 0.5px solid #D8DADB;
         color: $title-color;
     }
     .panel-content{
         margin: 7px;
         font-size: $small-font-size;
+        text-align: left;
     }
 }
 
 .worship-panel{
     @include panel($primary-color-dark, $primary-color-light, $primary-color-light, 20px, 14px);
+    vertical-align: middle;
 }
 
 .desc-panel{
     @include panel($primary-color-light, $primary-color-dark, $second-color-light,  20px, 14px);
+    display: inline-block;
+    vertical-align: top;
+    width: 28%;
+}
+
+.big-panel{
+    @include panel($primary-color-light, $primary-color-dark, $second-color-light,  24px, 14px);
+    .panel-title{
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
+.content{
+    padding: 5%;
+    padding-top: 3%;
+    background-color: $primary-color-light;
+    text-align: center;
+    .latest-events{
+        img{
+            width: 45%;
+            margin: 2.5%;
+        }
+    }
+}
+
+.footer{
+    background-color: $second-color;
+    color: $primary-color-light;
+    padding: 5%;
+    font-size: 12px;
 }
